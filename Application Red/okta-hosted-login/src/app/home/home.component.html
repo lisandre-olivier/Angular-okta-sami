@@ -1,0 +1,22 @@
+<h1 class="ui header">Login Page</h1>
+<div *ngIf="!isAuthenticated">
+  <p>If you‘re viewing this page then you have successfully started this Angular Red application.</p>
+  
+  <p>Go to the <a href="https://win-l5ncfdjkr8f.okta-idento.fr/">Teal</a> App so you could begin the authentication procedure and be able to return to this Red App authenticated.</p>
+  
+  <p>If you were redirected here without being authenticated please press the login button below, just to inform the server to authenticate this app with the same ID and Access Token.</p>
+  <button id="login-button" class="ui primary button" role="button" (click)="login()">Login</button>
+</div>
+
+<div *ngIf="isAuthenticated && userName">
+  <h2>Welcome back, {{ userName }}!</h2>
+  <p>
+    You have successfully authenticated against your Teal App, and have been redirected back to this application.  You now have an ID Token and access token in local storage.
+    Visit the <a href="/profile">My Profile</a> page to take a look inside the ID Token.
+  </p>
+  <h3>Next Steps</h3>
+  <p>
+    Click <a href="https://win-l5ncfdjkr8f.okta-idento.fr/">HERE</a>, you will be redirected back to the Teal App authenticated.
+  </p>
+  
+</div>
